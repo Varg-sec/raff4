@@ -1,0 +1,102 @@
+{
+  "repository": "https://github.com/aff4/ReferenceImages",
+  "commit": "84773b088bf6cce551a515d8ebb486bad69b58b8",
+  "oracle": {
+    "zip": "Python stdlib zipfile",
+    "rdf": "rdflib 7.1.4",
+    "scope": "Primary metadata only; not image content or AFF4 integrity verification"
+  },
+  "fixtures": [
+    {
+      "path": "AFF4Std/Base-Allocated.aff4",
+      "sha256": "df6c705c15339a53cf86b221858f2cd6b85c56f7078287ae99273145efe567c1",
+      "metadata_sha256": "69f7ed61e67e773c2d11f1cd8f33e0a4b2b81008215c1c5867a511fd8ea30120",
+      "volume": "aff4://ce24a0d0-a540-442a-939e-938b848add9a",
+      "triples": 87,
+      "images": [
+        "aff4://8fcced2b-989f-4f51-bfa2-38d4a4d818fe"
+      ],
+      "image_sizes": {
+        "aff4://8fcced2b-989f-4f51-bfa2-38d4a4d818fe": [
+          "268435456"
+        ]
+      }
+    },
+    {
+      "path": "AFF4Std/Base-Linear-AllHashes.aff4",
+      "sha256": "d8f098b1bb51eceb1e913c2389d3fb0a8543323d1db01bf8957e21bdccb1846d",
+      "metadata_sha256": "83eb1fc6bb9e51d098089e21e30aaf429df6c6463a6a0c9b4b0ea963ec1de6cf",
+      "volume": "aff4://7a86cb01-217c-4852-b8e0-c94be1ca5ac5",
+      "triples": 96,
+      "images": [
+        "aff4://e8733831-f8fc-4573-87d7-beb7fe708e96"
+      ],
+      "image_sizes": {
+        "aff4://e8733831-f8fc-4573-87d7-beb7fe708e96": [
+          "268435456"
+        ]
+      }
+    },
+    {
+      "path": "AFF4Std/Base-Linear-ReadError.aff4",
+      "sha256": "0b1c2edd6bdf37f2efe9c6fa274dd3c100de3fc5152d8a1fd82fb61f41c68e12",
+      "metadata_sha256": "2d103c50bb1323b4edc61600b5b32bbd109da6f3d736c03947f5d85a9e74af31",
+      "volume": "aff4://686e3512-b568-48fd-ac7b-73764b98a9aa",
+      "triples": 87,
+      "images": [
+        "aff4://3a873665-7bf6-47b5-a12a-d6632a58ddf9"
+      ],
+      "image_sizes": {
+        "aff4://3a873665-7bf6-47b5-a12a-d6632a58ddf9": [
+          "268435456"
+        ]
+      }
+    },
+    {
+      "path": "AFF4Std/Base-Linear.aff4",
+      "sha256": "bcde3297ae95cd9df214bfb79821334628dad08f21ef38374a2c091481e391c0",
+      "metadata_sha256": "8a42e78d0aab903e8277488cae1983b0cb97bf65facb0847504d1b90bb2a5736",
+      "volume": "aff4://685e15cc-d0fb-4dbc-ba47-48117fc77044",
+      "triples": 87,
+      "images": [
+        "aff4://cf853d0b-5589-4c7c-8358-2ca1572b87eb"
+      ],
+      "image_sizes": {
+        "aff4://cf853d0b-5589-4c7c-8358-2ca1572b87eb": [
+          "268435456"
+        ]
+      }
+    },
+    {
+      "path": "AFF4Std/Striped/Base-Linear_1.aff4",
+      "sha256": "56fea0e0b4c94fb7ce780a39129054fe869ee2fcfa77ee7c6ede4830b035c8c8",
+      "metadata_sha256": "fe4493cd1e1a707b2f52031a32dcf4a722823d2c13450f64bf24038d4ff91855",
+      "volume": "aff4://7cbb47d0-b04c-42bc-8c04-87b7782739ad",
+      "triples": 91,
+      "images": [
+        "aff4://951b3e29-6549-4266-8e81-3f88ddba61ae"
+      ],
+      "image_sizes": {
+        "aff4://951b3e29-6549-4266-8e81-3f88ddba61ae": [
+          "268435456"
+        ]
+      }
+    },
+    {
+      "path": "AFF4Std/Striped/Base-Linear_2.aff4",
+      "sha256": "0d46baa88def85b784caf54a3a6c561e08019fbc22424a21f117d00b90c94505",
+      "metadata_sha256": "a105d12a171491e342d8dc7808dda4714ac7e62279f7e388d99cdd3110fd079a",
+      "volume": "aff4://51725cd9-3769-4be7-a8ab-94e3ea62bf9a",
+      "triples": 91,
+      "images": [
+        "aff4://951b3e29-6549-4266-8e81-3f88ddba61ae"
+      ],
+      "image_sizes": {
+        "aff4://951b3e29-6549-4266-8e81-3f88ddba61ae": [
+          "268435456"
+        ]
+      }
+    }
+  ],
+  "redistribution": "No fixture binaries vendored; no explicit license located in the reference repository. Fetch from upstream for testing."
+}

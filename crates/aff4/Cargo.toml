@@ -3,11 +3,25 @@ name = "libaff4"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "Rust library for AFF4 and AFF4-L forensic containers (project scaffold)"
+license.workspace = true
+description = "Rust library for AFF4 and AFF4-L forensic containers"
 publish = false
+
+[dependencies]
+rio_api = "0.8.5"
+rio_turtle = "0.8.5"
+zip = { version = "2.4.2", default-features = false, features = ["deflate"] }
+flate2 = "1.1"
+snap = "1.1"
+lz4_flex = { version = "0.11", default-features = false, features = ["std", "safe-decode"] }
+
+[dev-dependencies]
+sha2 = "0.10.9"
+serde_json = "1.0"
 
 [lib]
 name = "aff4"
+path = "src/lib.rs"
 
 [lints]
 workspace = true

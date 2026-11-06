@@ -1,24 +1,54 @@
-# libaff4
+# aff4
 
-A planned Rust library for AFF4 physical and AFF4-L logical evidence containers, with a separate Python adapter using PyO3 and maturin.
+A Rust library for AFF4 physical and AFF4-L logical evidence containers, licensed
+under [Apache-2.0](LICENSE). Python bindings are deferred until the Rust core is ready.
 
-**Status:** project scaffold and implementation backlog only. No container API, Python extension, or conformance claim exists yet. The local Git repository is initialized and the backlog is approved. GitHub setup and issue publication remain blocked by session access restrictions.
+## Implemented
 
-## Project plan
+The first reader opens ZIP/ZIP64 containers from files or any `Read + Seek`
+source. It reads volume identity and version, parses primary Turtle metadata,
+enumerates image identifiers, and exposes owned RDF terms with structured errors.
+Caller-configurable limits cover bootstrap data, metadata bytes, parsed triples
+and member count. The ZIP dependency reads the central directory before the
+member-count limit is applied; these limits are not a total memory cap.
 
-- [Design, sources and scope](docs/design.md)
-- [23 implementation issue drafts and dependencies](docs/backlog.md)
-- [Machine-readable issue manifest](docs/issues.json)
-- [GitHub setup and publication](docs/github-setup.md)
+```rust,no_run
+use aff4::Container;
 
-## Local checks
+let container = Container::open("evidence.aff4")?;
+println!("{}", container.volume_iri());
+for image in container.images() {
+    println!("{image}");
+}
+# Ok::<(), aff4::Error>(())
+```
+
+## Current limits
+
+Opening a container does not verify its integrity or establish conformance.
+Image-stream and map content reads, metadata imports, writing, multipart assembly,
+and hash verification are not implemented. RDF-star is unsupported; unknown
+ordinary RDF predicates and datatypes are retained. Queries use exact IRIs and
+perform no type inference. Bootstrap versions 1.0 and 2.1 are recognized; other
+versions, including legacy logical 1.1, return an unsupported-version error.
+
+The reader matches independently checked metadata from six canonical base
+volumes. Logical 2.1 bootstrap tests are synthetic: the upstream logical reference
+set at the pinned revision contains only deprecated images.
+
+## Development
 
 ```sh
 cargo fmt --all -- --check
-cargo clippy --workspace --all-targets --offline -- -D warnings
-cargo test --workspace --offline
+cargo clippy --workspace --all-targets --locked -- -D warnings
+cargo test --workspace --locked
 ```
 
-The current crate deliberately contains no placeholder format implementation. A successful build validates the scaffold only. Minimum Rust version is provisionally 1.85 and must be tested before release.
+See [fixture instructions](fixtures/README.md) for the separate canonical suite.
+The minimum supported Rust version is 1.85. Crates.io publication is disabled
+while the API is under development.
 
-License and publishing names are pending maintainer selection; crates.io publication is disabled.
+- [Architecture and scope](docs/design.md)
+- [Implementation backlog](docs/backlog.md)
+- [Standards research](docs/baseline-research.md)
+- [Preliminary conformance coverage](docs/conformance-matrix.md)
