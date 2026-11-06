@@ -1,0 +1,4 @@
+[submodule "fixtures/downloads/reference"]
+	path = fixtures/downloads/reference
+	url = https://github.com/aff4/ReferenceImages.git
+	branch = master
