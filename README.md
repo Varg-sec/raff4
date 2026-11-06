@@ -23,6 +23,12 @@ for image in container.images() {
 # Ok::<(), aff4::Error>(())
 ```
 
+Inspect a container from the command line:
+
+```sh
+cargo run -p aff4-cli -- evidence.aff4
+```
+
 ## Current limits
 
 Opening a container does not verify its integrity or establish conformance.
@@ -37,6 +43,8 @@ volumes. Logical 2.1 bootstrap tests are synthetic: the upstream logical referen
 set at the pinned revision contains only deprecated images.
 
 ## Development
+
+The workspace follows the [Cargo book project layout](https://doc.rust-lang.org/cargo/guide/project-layout.html) as a library-plus-executable split: `crates/aff4` is the pure library (`src/lib.rs`, no binary target), and `crates/aff4-cli` is the executable package (`src/main.rs`, binary name `aff4`).
 
 ```sh
 cargo fmt --all -- --check

@@ -1,5 +1,5 @@
 [package]
-name = "libaff4"
+name = "aff4"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true

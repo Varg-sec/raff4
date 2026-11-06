@@ -1,11 +1,11 @@
 # Implementation backlog
 
-Approved for publication on 2026-11-04; these are local IDs, not GitHub issue numbers. Each issue delivers a verifiable consumer capability. AFK means implementation can proceed after its blockers; HITL means an explicit maintainer decision is needed. No originating PRD issue exists.
+Published as issues #1–#23, then revised on 2026-11-06 for Apache-2.0 and Rust-first delivery; these are local IDs, not GitHub issue numbers. Each issue delivers a verifiable consumer capability. AFK means implementation can proceed after its blockers; HITL means an explicit maintainer decision is needed. No originating PRD issue exists.
 
 Suggested labels: `type:afk`, `type:hitl`, `status:planned`, and the area shown below. Do not mark blocked issues ready.
 
 1. **[Pin the conformance baseline and runnable reference corpus](issues/001.md)** — AFF4-001; HITL; blocked by: —; area: foundation.
-2. **[Open a container and inspect its metadata from Rust and Python](issues/002.md)** — AFF4-002; AFK; blocked by: AFF4-001; area: reader.
+2. **[Open a container and inspect its metadata from Rust](issues/002.md)** — AFF4-002; AFK; blocked by: AFF4-001; area: reader.
 3. **[Read and seek uncompressed AFF4 image streams](issues/003.md)** — AFF4-003; AFK; blocked by: AFF4-002; area: reader.
 4. **[Read compressed AFF4 image streams](issues/004.md)** — AFF4-004; AFK; blocked by: AFF4-003; area: reader.
 5. **[Read sparse and mapped physical images](issues/005.md)** — AFF4-005; AFK; blocked by: AFF4-003; area: reader.
@@ -25,18 +25,23 @@ Suggested labels: `type:afk`, `type:hitl`, `status:planned`, and the area shown 
 19. **[Add optional accelerated metadata support](issues/019.md)** — AFF4-019; AFK; blocked by: AFF4-018; area: optional.
 20. **[Add optional metadata signing and trust evaluation](issues/020.md)** — AFF4-020; HITL; blocked by: AFF4-012, AFF4-018; area: optional.
 21. **[Harden public readers against malformed containers](issues/021.md)** — AFF4-021; AFK; blocked by: AFF4-014, AFF4-015, AFF4-016, AFF4-018; area: quality.
-22. **[Ship Rust documentation and reproducible Python wheels](issues/022.md)** — AFF4-022; AFK; blocked by: AFF4-017, AFF4-018, AFF4-021; area: release.
-23. **[Demonstrate a generated binding for another language](issues/023.md)** — AFF4-023; HITL; blocked by: AFF4-002; area: optional.
+22. **[Ship a documented Rust release candidate](issues/022.md)** — AFF4-022; AFK; blocked by: AFF4-017, AFF4-018, AFF4-021; area: release.
+23. **[Demonstrate a generated binding for another language](issues/023.md)** — AFF4-023; HITL; blocked by: AFF4-022; area: optional.
+
+24. **[Add Python bindings after the Rust core is ready](issues/024.md)** — AFF4-024; AFK; blocked by: AFF4-022; area: bindings; deferred.
+
+25. **[Restructure the workspace into library and executable packages per the Cargo book layout](issues/025.md)** — AFF4-025; AFK; blocked by: —; area: foundation.
 
 ## Milestones
 
 1. Reader preview: 001–006 and 009–012.
 2. Single-volume writing: 007–008 and 013–015.
 3. Complete mandatory-profile candidate: 016–018 and 021–022.
-4. Optional extensions: 019–020 and 023.
+4. Optional Rust extensions: 019–020.
+5. Deferred language bindings, after the Rust core is ready: 024 (Python) and 023 (another language).
 
 Reader and writer support are tracked separately. An optional feature cannot block the mandatory-profile release unless baseline review finds it mandatory. Missing canonical evidence remains visible.
 
 ## Publication status
 
-The user authorized proceeding with this breakdown on 2026-11-04. Publication remains blocked by session access to Git metadata and GitHub; see github-setup.md.
+The user published the original 23 issues; their URLs are recorded in github-issues.json. The Rust-first revisions and new local issue AFF4-024 have not been synced to GitHub because this session cannot reach its API.

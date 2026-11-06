@@ -1,0 +1,18 @@
+[package]
+name = "aff4-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Command-line inspector for AFF4 and AFF4-L forensic containers"
+publish = false
+
+[dependencies]
+aff4 = { path = "../aff4" }
+
+[[bin]]
+name = "aff4"
+path = "src/main.rs"
+
+[lints]
+workspace = true

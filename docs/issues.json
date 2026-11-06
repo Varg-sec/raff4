@@ -9,7 +9,7 @@
   },
   {
     "id": "AFF4-002",
-    "title": "Open a container and inspect its metadata from Rust and Python",
+    "title": "Open a container and inspect its metadata from Rust",
     "type": "AFK",
     "area": "reader",
     "blocked_by": [
@@ -228,7 +228,7 @@
   },
   {
     "id": "AFF4-022",
-    "title": "Ship Rust documentation and reproducible Python wheels",
+    "title": "Ship a documented Rust release candidate",
     "type": "AFK",
     "area": "release",
     "blocked_by": [
@@ -244,8 +244,28 @@
     "type": "HITL",
     "area": "optional",
     "blocked_by": [
-      "AFF4-002"
+      "AFF4-022"
     ],
-    "body_file": "docs/issues/023.md"
+    "body_file": "docs/issues/023.md",
+    "phase": "deferred"
+  },
+  {
+    "id": "AFF4-024",
+    "title": "Add Python bindings after the Rust core is ready",
+    "type": "AFK",
+    "area": "bindings",
+    "phase": "deferred",
+    "blocked_by": [
+      "AFF4-022"
+    ],
+    "body_file": "docs/issues/024.md"
+  },
+  {
+    "id": "AFF4-025",
+    "title": "Restructure the workspace into library and executable packages per the Cargo book layout",
+    "type": "AFK",
+    "area": "foundation",
+    "blocked_by": [],
+    "body_file": "docs/issues/025.md"
   }
 ]

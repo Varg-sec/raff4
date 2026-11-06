@@ -5,6 +5,8 @@
 //! writing and integrity verification are not implemented yet.
 //! Opening a container does not establish conformance or authenticity.
 //!
+//! A separate command-line inspector is provided by the `aff4-cli` package.
+//!
 //! ```no_run
 //! use aff4::{Container, Error};
 //! # fn main() -> Result<(), Error> {

@@ -4,6 +4,8 @@
 
 Build an embeddable Rust reader, writer and verifier for physical and logical evidence. Start with synchronous, seekable input and incremental output. Consumers control filesystem access, resource budgets and cancellation. Expose owned handles, typed metadata, streaming reads and structured errors. Preserve unknown RDF data where possible. Avoid a mandatory CLI, runtime or Python dependency in the core.
 
+The workspace follows the [Cargo book project layout](https://doc.rust-lang.org/cargo/guide/project-layout.html) as a library-plus-executable split: `crates/aff4` is the pure library package (entry point `src/lib.rs`, no binary target), and `crates/aff4-cli` is the separate executable package (`src/main.rs`), which depends on the library and provides the inspection CLI. The library never depends on the CLI.
+
 The first phase implements and tests only the Rust library. The project uses Apache-2.0, selected by the maintainer on 2026-11-06. Keep an embeddable API with owned handles, structured errors and explicit resource lifetimes. These properties will support future adapters without adding binding dependencies now.
 
 Once the Rust reader, writer and verifier are ready, deferred issue AFF4-024 adds a separate PyO3 adapter, maturin packaging, type stubs and Python integration tests. Python support versions will be selected at that point. Other language bindings are likewise deferred until after the Rust release candidate.
