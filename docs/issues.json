@@ -1,0 +1,251 @@
+[
+  {
+    "id": "AFF4-001",
+    "title": "Pin the conformance baseline and runnable reference corpus",
+    "type": "HITL",
+    "area": "foundation",
+    "blocked_by": [],
+    "body_file": "docs/issues/001.md"
+  },
+  {
+    "id": "AFF4-002",
+    "title": "Open a container and inspect its metadata from Rust and Python",
+    "type": "AFK",
+    "area": "reader",
+    "blocked_by": [
+      "AFF4-001"
+    ],
+    "body_file": "docs/issues/002.md"
+  },
+  {
+    "id": "AFF4-003",
+    "title": "Read and seek uncompressed AFF4 image streams",
+    "type": "AFK",
+    "area": "reader",
+    "blocked_by": [
+      "AFF4-002"
+    ],
+    "body_file": "docs/issues/003.md"
+  },
+  {
+    "id": "AFF4-004",
+    "title": "Read compressed AFF4 image streams",
+    "type": "AFK",
+    "area": "reader",
+    "blocked_by": [
+      "AFF4-003"
+    ],
+    "body_file": "docs/issues/004.md"
+  },
+  {
+    "id": "AFF4-005",
+    "title": "Read sparse and mapped physical images",
+    "type": "AFK",
+    "area": "reader",
+    "blocked_by": [
+      "AFF4-003"
+    ],
+    "body_file": "docs/issues/005.md"
+  },
+  {
+    "id": "AFF4-006",
+    "title": "Verify physical image content and structural hashes",
+    "type": "AFK",
+    "area": "integrity",
+    "blocked_by": [
+      "AFF4-004",
+      "AFF4-005"
+    ],
+    "body_file": "docs/issues/006.md"
+  },
+  {
+    "id": "AFF4-007",
+    "title": "Write and reopen an uncompressed physical image",
+    "type": "AFK",
+    "area": "writer",
+    "blocked_by": [
+      "AFF4-003",
+      "AFF4-006"
+    ],
+    "body_file": "docs/issues/007.md"
+  },
+  {
+    "id": "AFF4-008",
+    "title": "Write compressed and sparse physical images",
+    "type": "AFK",
+    "area": "writer",
+    "blocked_by": [
+      "AFF4-004",
+      "AFF4-005",
+      "AFF4-007"
+    ],
+    "body_file": "docs/issues/008.md"
+  },
+  {
+    "id": "AFF4-009",
+    "title": "Browse logical acquisitions and read ZIP-backed files",
+    "type": "AFK",
+    "area": "logical",
+    "blocked_by": [
+      "AFF4-002"
+    ],
+    "body_file": "docs/issues/009.md"
+  },
+  {
+    "id": "AFF4-010",
+    "title": "Read inline data, alternate streams and extended attributes",
+    "type": "AFK",
+    "area": "logical",
+    "blocked_by": [
+      "AFF4-009"
+    ],
+    "body_file": "docs/issues/010.md"
+  },
+  {
+    "id": "AFF4-011",
+    "title": "Read logical files backed by maps and image streams",
+    "type": "AFK",
+    "area": "logical",
+    "blocked_by": [
+      "AFF4-004",
+      "AFF4-005",
+      "AFF4-009"
+    ],
+    "body_file": "docs/issues/011.md"
+  },
+  {
+    "id": "AFF4-012",
+    "title": "Verify logical content and metadata integrity",
+    "type": "AFK",
+    "area": "integrity",
+    "blocked_by": [
+      "AFF4-006",
+      "AFF4-010",
+      "AFF4-011"
+    ],
+    "body_file": "docs/issues/012.md"
+  },
+  {
+    "id": "AFF4-013",
+    "title": "Create a logical container with ZIP-backed files",
+    "type": "AFK",
+    "area": "writer",
+    "blocked_by": [
+      "AFF4-007",
+      "AFF4-009",
+      "AFF4-012"
+    ],
+    "body_file": "docs/issues/013.md"
+  },
+  {
+    "id": "AFF4-014",
+    "title": "Write inline content and file substreams",
+    "type": "AFK",
+    "area": "writer",
+    "blocked_by": [
+      "AFF4-010",
+      "AFF4-013"
+    ],
+    "body_file": "docs/issues/014.md"
+  },
+  {
+    "id": "AFF4-015",
+    "title": "Write large logical files and shared storage",
+    "type": "AFK",
+    "area": "writer",
+    "blocked_by": [
+      "AFF4-008",
+      "AFF4-011",
+      "AFF4-013"
+    ],
+    "body_file": "docs/issues/015.md"
+  },
+  {
+    "id": "AFF4-016",
+    "title": "Read multipart container sets",
+    "type": "AFK",
+    "area": "multipart",
+    "blocked_by": [
+      "AFF4-011"
+    ],
+    "body_file": "docs/issues/016.md"
+  },
+  {
+    "id": "AFF4-017",
+    "title": "Write multipart physical and logical containers",
+    "type": "AFK",
+    "area": "multipart",
+    "blocked_by": [
+      "AFF4-015",
+      "AFF4-016"
+    ],
+    "body_file": "docs/issues/017.md"
+  },
+  {
+    "id": "AFF4-018",
+    "title": "Read and write imported metadata stores",
+    "type": "AFK",
+    "area": "scaling",
+    "blocked_by": [
+      "AFF4-012",
+      "AFF4-013"
+    ],
+    "body_file": "docs/issues/018.md"
+  },
+  {
+    "id": "AFF4-019",
+    "title": "Add optional accelerated metadata support",
+    "type": "AFK",
+    "area": "optional",
+    "blocked_by": [
+      "AFF4-018"
+    ],
+    "body_file": "docs/issues/019.md"
+  },
+  {
+    "id": "AFF4-020",
+    "title": "Add optional metadata signing and trust evaluation",
+    "type": "HITL",
+    "area": "optional",
+    "blocked_by": [
+      "AFF4-012",
+      "AFF4-018"
+    ],
+    "body_file": "docs/issues/020.md"
+  },
+  {
+    "id": "AFF4-021",
+    "title": "Harden public readers against malformed containers",
+    "type": "AFK",
+    "area": "quality",
+    "blocked_by": [
+      "AFF4-014",
+      "AFF4-015",
+      "AFF4-016",
+      "AFF4-018"
+    ],
+    "body_file": "docs/issues/021.md"
+  },
+  {
+    "id": "AFF4-022",
+    "title": "Ship Rust documentation and reproducible Python wheels",
+    "type": "AFK",
+    "area": "release",
+    "blocked_by": [
+      "AFF4-017",
+      "AFF4-018",
+      "AFF4-021"
+    ],
+    "body_file": "docs/issues/022.md"
+  },
+  {
+    "id": "AFF4-023",
+    "title": "Demonstrate a generated binding for another language",
+    "type": "HITL",
+    "area": "optional",
+    "blocked_by": [
+      "AFF4-002"
+    ],
+    "body_file": "docs/issues/023.md"
+  }
+]

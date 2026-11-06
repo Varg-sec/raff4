@@ -1,0 +1,13 @@
+[package]
+name = "libaff4"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Rust library for AFF4 and AFF4-L forensic containers (project scaffold)"
+publish = false
+
+[lib]
+name = "aff4"
+
+[lints]
+workspace = true
