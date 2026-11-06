@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/aff4/Standard",
+  "commit": "da883fe48b15dec933a373f40e85e48b7b6c9214",
+  "documents": [
+    {
+      "path": "inprogress/AFF4StandardSpecification-v1.0a.md",
+      "sha256": "9eff953e122d50829ee518ffcd8884cb8393934119ca2cf077789cb36cc30639",
+      "license": "GFDL-1.3-or-later"
+    },
+    {
+      "path": "inprogress/AFF4-L-StandardSpecification-v1.0.md",
+      "sha256": "507398673a7d0a945d313330e8f94e007a56a052f50a695726fcc2533c40c92d",
+      "license": "Apache-2.0"
+    }
+  ]
+}
